@@ -8,6 +8,7 @@ its full XPath path. This is useful when looking for a particular
 element in a large YANG file, and looking for the exact path it
 (or they) are at.
 
+```
   XPath output specific options:
     --xpath-help        Print help on tree symbols and exit
     --xpath-depth=XPATH_DEPTH
@@ -18,10 +19,11 @@ element in a large YANG file, and looking for the exact path it
                         Only print nodes with this exact name
     --xpath-substring=XPATH_SUBSTRING
                         Only print nodes containing this substring
-
+```
 
 A couple of examples:
 
+```
 $ pyang -f xpath tailf-ncs.yang --xpath-substring back-track
 tailf-ncs-devices.yang:22: warning: imported module tailf-ncs-monitoring not used
 >>> module: tailf-ncs
@@ -33,7 +35,9 @@ tailf-ncs-devices.yang:22: warning: imported module tailf-ncs-monitoring not use
 >>>  augment /kicker:kickers:
 
 >>>  notifications:
+```
 
+```
 $ pyang -f xpath tailf-ncs.yang --xpath-name name --xpath-path /zombies
 tailf-ncs-devices.yang:22: warning: imported module tailf-ncs-monitoring not used
 >>> module: tailf-ncs
@@ -44,7 +48,7 @@ tailf-ncs-devices.yang:22: warning: imported module tailf-ncs-monitoring not use
 
 >>>  augment /kicker:kickers:
 /notification-kicker/variable/name
-
+```
 
 Note that unless you copy the plugin to your pyang installation's 
 plugin directory, you will need to add a --plugindir= option to
